@@ -121,14 +121,15 @@ const OurYoutubeChannel = () => {
       py-2.5 sm:py-3 md:py-3
       bg-white text-black/80 font-semibold text-sm sm:text-base md:text-lg
       rounded-xl border border-black/10
-      transition-all duration-300
+      transition-all duration-500 ease-in-out
       hover:text-white
-      hover:bg-linear-to-r from-[#00b3ff] to-[#ff1f01]
-      hover:scale-102
+      hover:scale-105
+      before:absolute before:inset-0 before:rounded-xl before:bg-linear-to-r before:from-[#00b3ff] before:to-[#ff1f01] before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
+      overflow-hidden
     "
         >
-          <PlayCircle className="w-5 h-5 sm:w-6 md:w-6 mr-2" />
-          Watch on YouTube
+          <PlayCircle className="w-5 h-5 sm:w-6 md:w-6 mr-2 relative z-10" />
+          <span className="relative z-10">Watch on YouTube</span>
         </a>
       </div>
     </section>

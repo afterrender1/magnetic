@@ -153,23 +153,35 @@ export default function ContactForm() {
               <div className="mt-2 flex justify-center">
                 <button
                   type="submit"
-                  className="relative inline-flex items-center justify-center px-6 py-3 sm:px-10 sm:py-4 text-sm sm:text-base font-bold text-black rounded-xl shadow-lg hover:bg-linear-to-r from-[#00b3ff] to-[#ff1f01] hover:text-white transition-all duration-300 active:scale-95"
+                  className="
+      relative inline-flex items-center justify-center
+      px-6 py-3 sm:px-10 sm:py-4
+      text-sm sm:text-base font-semibold text-black/80
+      rounded-xl border border-black/10
+      overflow-hidden cursor-pointer
+      transition-all duration-500 ease-in-out
+      hover:text-white
+      hover:scale-105
+      before:absolute before:inset-0 before:rounded-xl before:bg-linear-to-r before:from-[#00b3ff] before:to-[#ff1f01] before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
+    "
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Submit Request
+                  <Send className="w-5 h-5 mr-2 relative z-10" />
+                  <span className="relative z-10">Submit Request</span>
                 </button>
               </div>
             </form>
 
             {/* Support Info */}
-            <div className="mt-8 pt-8 border-t border-slate-100 text-center text-sm sm:text-base text-slate-500 font-medium flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
+            <div
+              className={`mt-8 pt-8 border-t border-slate-100 text-center text-sm sm:text-base text-slate-500 font-medium flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 ${jakarta.className}`}
+            >
               <div className="flex items-center gap-2">
                 <PhoneCall className="w-4 h-4 text-blue-500" />
-                +92 300 1234567
+                +1 (234) 567-8901
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-500" />
-                hello@magnetik.com
+                contact@magnetik.com
               </div>
             </div>
           </div>
