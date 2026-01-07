@@ -21,19 +21,20 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const navLinks = ["Home", "Win", "Shop", "Contact"];
+  const navLinks = ["Home", "Winshop", "Contact"];
 
   return (
     <>
-      <nav className="relative w-full rounded-full h-16 flex items-center justify-between px-6 md:px-12 py-3 bg-black/10 backdrop-blur-2xl border-b border-white/5 z-40">
+      <nav className="relative w-full rounded-full h-16 flex items-center justify-between px-6 md:px-12 py-3 bg-black/10 backdrop-blur-2xl border-b border-white/30 z-40">
         {/* Logo */}
         <div className="relative z-10">
           <Image
-            src="/logo/brandlogo.png"
+            src="/logo/wbrandlogo.png"
             alt="Logo"
             width={100}
             height={40}
             priority
+            className="opacity-85"
           />
         </div>
 
@@ -82,9 +83,15 @@ export default function Navbar() {
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-8 sm:mb-12">
-              <span className="text-white/50 font-bold uppercase tracking-widest text-xs sm:text-sm">
-                Menu
-              </span>
+              <div>
+                <Image
+                  src="/logo/wbrandlogo.png"
+                  alt="Logo"
+                  width={120}
+                  height={48}
+                  className="opacity-90"
+                />
+              </div>
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 sm:p-3 text-white bg-white/10 rounded-full"
@@ -118,23 +125,31 @@ export default function Navbar() {
             </nav>
 
             {/* CTA */}
-            <div className="mt-auto pt-6">
+            <div className="mt-auto pt-6 w-full">
               <a
                 href="tel:+923001234567"
                 className="
-            flex items-center justify-center gap-3
-            rounded-2xl
-            bg-white text-black
-            py-4 sm:py-5
-            text-base sm:text-xl
-            font-bold
-            active:scale-95
-            transition-transform
-          "
+      group relative flex items-center justify-center gap-3
+      rounded-2xl bg-white text-black
+      py-4 px-6
+      text-lg sm:text-xl font-extrabold
+      shadow-[0_0_20px_rgba(255,255,255,0.1)]
+      hover:bg-gray-100
+      active:scale-[0.97]
+      transition-all duration-200
+      w-full
+    "
               >
-                <PhoneCall size={20} className="sm:hidden" />
-                <PhoneCall size={24} className="hidden sm:block" />
-                Call Now
+                {/* Optimized Icon handling: Using a single component with responsive size props */}
+                <PhoneCall
+                  className="shrink-0 transition-transform group-hover:rotate-12"
+                  size={24}
+                />
+
+                <span className="tracking-tight">Call Now</span>
+
+                {/* Subtle Shine Effect for high-end feel without lag */}
+                <div className="absolute inset-0 rounded-2xl border border-white/20 pointer-events-none" />
               </a>
             </div>
           </motion.div>
