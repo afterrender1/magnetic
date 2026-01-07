@@ -147,8 +147,8 @@ export default function Navbar() {
             <nav className="flex flex-col">
               {navLinks.map((item) => (
                 <Link
-                  key={item}
-                  href={`/${item.toLowerCase()}`}
+                  key={item.name}
+                  href={`${item.name}`}
                   onClick={() => setIsOpen(false)}
                   className="
               text-2xl
@@ -161,7 +161,7 @@ export default function Navbar() {
               active:bg-white/5
             "
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </nav>
