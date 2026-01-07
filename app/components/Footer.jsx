@@ -45,7 +45,7 @@ export default function Footer() {
         {/* Main Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start">
           {/* About */}
-          <div className="flex flex-col gap-4 text-left">
+          <div className={`flex flex-col gap-4 text-left ${jakarta.className}`}>
             <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-sm">
               Magnetik helps TikTok Shop sellers scale efficiently with proven
               strategies, creative content, and predictable growth.
@@ -59,7 +59,7 @@ export default function Footer() {
             >
               Platform
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className={`flex flex-col gap-3 ${jakarta.className}`}>
               {["Home", "Win Shop", "Contact", "FAQ"].map((item) => (
                 <li key={item}>
                   <a
@@ -83,7 +83,7 @@ export default function Footer() {
             >
               Contact
             </h3>
-            <div className="flex flex-col gap-4 w-full">
+            <div className={`flex flex-col gap-4 w-full ${jakarta.className}`}>
               <a
                 href="tel:+923001234567"
                 className="group flex items-center gap-3 justify-start"
@@ -103,8 +103,8 @@ export default function Footer() {
                 <div className="bg-white/10 p-2.5 rounded-xl group-hover:bg-white/20 transition border border-white/10">
                   <Mail className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-white/90 group-hover:text-white text-sm font-medium">
-                  hello@magnetik.com
+                <span className="text-white/90 group-hover:text-white text-sm ">
+                  contact@magnetik.com
                 </span>
               </a>
             </div>
@@ -141,7 +141,7 @@ export default function Footer() {
         <div className="h-px w-full bg-linear-to-r from-transparent via-white/25 to-transparent mt-14 mb-8" />
 
         {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-white/70">
+        <div className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-white/70 ${jakarta.className}`}>
           <p className="text-left">
             © {new Date().getFullYear()} Afterrender. All rights reserved.
           </p>
