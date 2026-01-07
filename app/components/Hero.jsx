@@ -11,7 +11,7 @@ const Hero = () => {
             {/* Background */}
             <div className="absolute inset-0 bg-linear-to-r from-[#00b3ff] to-[#ff1f01]"></div>
 
-            <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center gap-10">
+            <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center gap-2">
 
                 {/* Text Content */}
                 <div className="flex flex-col justify-center items-center text-center max-w-3xl">
@@ -19,7 +19,7 @@ const Hero = () => {
                         TikTok Shop Marketing <br />
                         <span className="text-white/80">That Actually Works!</span>
                     </h1>
-                    <p className="text-sm md:text-2xl text-white/90 font-medium mb-4">
+                    <p className="text-sm md:text-2xl text-white/90 font-medium mb-1">
                         Win Shop on TikTok in 2026 with Magnetik
                     </p>
                 </div>
