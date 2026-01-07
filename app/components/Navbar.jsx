@@ -21,7 +21,11 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const navLinks = ["Home", "Winshop", "Contact"];
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Winshop", href: "/winshop" },
+    { name: "Contact", href: "/contact" },
+  ];
 
   return (
     <>
@@ -41,12 +45,12 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-8 text-white font-medium">
           {navLinks.map((item) => (
-            <li key={item}>
+            <li key={item.name}>
               <Link
-                href={`/${item.toLowerCase()}`}
+                href={`${item.href}`}
                 className="hover:opacity-70 transition-opacity"
               >
-                {item}
+                {item.name}
               </Link>
             </li>
           ))}
