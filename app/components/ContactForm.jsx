@@ -85,7 +85,7 @@ export default function ContactForm() {
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
-                    placeholder="+92 300 1234567"
+                    placeholder="+1 (555) 456-8867"
                     className={`w-full rounded-xl border border-slate-200 p-4 text-sm sm:text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 ${jakarta.className}`}
                     required
                   />
