@@ -1,7 +1,7 @@
 import React from "react";
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
-import { Outfit, Plus_Jakarta_Sans  } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800"],
@@ -58,9 +58,17 @@ export default function Testimonials() {
               Testimonials
             </span>
           </div>
-
-          <h2 className={`text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-black tracking-tight text-slate-950 mb-3 sm:mb-4 ${outfit.className}`}>
-            Trusted by Real Sellers
+          <h2
+            className={`
+    text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl
+    font-black tracking-tight mb-3 sm:mb-4
+    ${outfit.className}
+  `}
+          >
+            Trusted by{" "}
+            <span className="bg-linear-to-r from-[#00b3ff] to-[#ff1f01] bg-clip-text text-transparent">
+              Real Sellers
+            </span>
           </h2>
 
           <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl sm:max-w-2xl mx-auto ">
@@ -72,49 +80,56 @@ export default function Testimonials() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {TESTIMONIALS.map((item) => (
-            <div key={item.id} className={`group relative ${jakarta.className} `}>
-              {/* Glow */}
+            <div
+              key={item.id}
+              className={`group relative ${jakarta.className}`}
+            >
+              {/* Glow (unchanged) */}
               <div className="absolute inset-0 bg-linear-to-br from-[#ff1f01]/20 via-purple-500/20 to-[#00b3ff]/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative h-full p-5 sm:p-6 lg:p-8 rounded-3xl bg-white border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-500">
-                {/* Quote */}
-                <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-linear-to-br from-slate-100 to-slate-50 flex items-center justify-center">
-                  <Quote className="text-slate-400 w-4 h-4 sm:w-5 sm:h-5" />
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-0.5 mb-4 sm:mb-6">
-                  {Array.from({ length: item.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="text-yellow-400 fill-yellow-400 w-4 h-4 sm:w-4.5 sm:h-4.5"
-                    />
-                  ))}
-                </div>
-
-                {/* Text */}
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
-                  "{item.text}"
-                </p>
-
-                {/* User */}
-                <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-slate-100">
-                  <div className="relative w-11 h-11 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-linear-to-br from-slate-200 to-slate-300 ring-2 ring-white shadow-md">
-                    <Image
-                      src={item.avatar}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
+              {/* Gradient Border Wrapper */}
+              <div className="relative p-[1.5px] rounded-xl bg-linear-to-r from-[#ff1f01] to-[#00b3ff]">
+                {/* Card Body */}
+                <div className="relative h-full p-5 sm:p-6 lg:p-8 rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
+                  {/* Quote */}
+                  <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-linear-to-br from-slate-100 to-slate-50 flex items-center justify-center">
+                    <Quote className="text-slate-400 w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
 
-                  <div>
-                    <p className="font-bold text-slate-900 text-sm sm:text-base leading-none mb-1">
-                      {item.name}
-                    </p>
-                    <span className="text-xs sm:text-sm text-slate-500 font-medium">
-                      {item.role}
-                    </span>
+                  {/* Rating */}
+                  <div className="flex gap-0.5 mb-4 sm:mb-6">
+                    {Array.from({ length: item.rating }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="text-yellow-400 fill-yellow-400 w-4 h-4 sm:w-4.5 sm:h-4.5"
+                      />
+                    ))}
+                  </div>
+
+                  {/* Text */}
+                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
+                    "{item.text}"
+                  </p>
+
+                  {/* User */}
+                  <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-slate-100">
+                    <div className="relative w-11 h-11 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-linear-to-br from-slate-200 to-slate-300 ring-2 ring-white shadow-md">
+                      <Image
+                        src={item.avatar}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div>
+                      <p className="font-bold text-slate-900 text-sm sm:text-base leading-none mb-1">
+                        {item.name}
+                      </p>
+                      <span className="text-xs sm:text-sm text-slate-500 font-medium">
+                        {item.role}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
