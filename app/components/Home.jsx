@@ -5,6 +5,7 @@ import OurYoutubeChannel from "./OurYoutubeChannel";
 import FAQ from "./FAQ";
 import ContactForm from "./ContactForm";
 import BookCallButton from "./BookACall";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <FAQ />
       <ContactForm />
       <BookCallButton />
+      <Footer />
     </>
   );
 };
