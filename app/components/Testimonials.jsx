@@ -1,122 +1,122 @@
-"use client";
-
 import React from "react";
-import { Star, CheckCircle2 } from "lucide-react";
-import { motion } from "framer-motion";
+import { Star, Quote } from "lucide-react";
+import Image from "next/image";
 
-const testimonials = [
+const TESTIMONIALS = [
   {
-    name: "Alex Rivera",
-    role: "E-com Founder",
-    text: "Magnetik scaled our TikTok shop from $0 to $50k in 30 days. Their 2026 strategies are unmatched.",
+    id: 1,
+    name: "Ahmed Khan",
+    role: "TikTok Shop Seller",
+    avatar: "/images/avatars/michel.png",
     rating: 5,
+    text: "Magnetik scaled our TikTok Shop from zero to consistent daily sales in under 30 days. The strategy actually works.",
   },
   {
-    name: "Sarah Chen",
-    role: "Brand Manager",
-    text: "The only official partner that actually understands the TikTok algorithm. Pure magic for our ROI!",
+    id: 2,
+    name: "Sarah Ali",
+    role: "E-commerce Brand Owner",
+       avatar: "/images/avatars/sarah.png",
+
     rating: 5,
+    text: "Their content hooks and scaling system helped us break through the algorithm without risking our account.",
   },
   {
-    name: "James Wilson",
-    role: "Marketing Head",
-    text: "Finally, an agency that delivers. They turned our TikTok presence into a high-conversion machine.",
+    id: 3,
+    name: "Usman Raza",
+    role: "Dropshipping Entrepreneur",
+     avatar: "/images/avatars/robert.png",
+
     rating: 5,
+    text: "Finally a TikTok Shop partner that understands performance, not just views. ROI stayed strong as spend increased.",
   },
 ];
 
-const Testimonials = () => {
+export default function Testimonials() {
   return (
-    <section className="py-24 px-6 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Header: Centered & Bold */}
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-[1000] text-slate-950 tracking-tight leading-[0.95] mb-6"
-          >
-            TikTok Shop Marketing <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff1f01] to-[#00b3ff]">
-              That Actually Works!
-            </span>
-          </motion.h2>
-          <p className="text-slate-500 text-lg md:text-xl font-medium tracking-tight">
-            Win Shop on TikTok in 2026 with Magnetik.
-          </p>
-        </div>
+    <section className="py-16 sm:py-20 lg:py-24 bg-linear-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,31,1,0.03),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(0,179,255,0.03),transparent_50%)]" />
 
-        {/* Layout: Sharp Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col justify-between hover:border-[#ff1f01]/20 transition-colors"
-            >
-              <div>
-                <div className="flex gap-1 mb-6">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      className="fill-[#ff1f01] text-[#ff1f01]"
-                    />
-                  ))}
-                </div>
-                <p className="text-slate-800 text-xl font-semibold leading-snug mb-8">
-                  "{t.text}"
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500">
-                  {t.name.charAt(0)}
-                </div>
-                <div>
-                  <div className="flex items-center gap-1">
-                    <h4 className="font-bold text-slate-950 uppercase text-sm tracking-tighter">
-                      {t.name}
-                    </h4>
-                    <CheckCircle2
-                      size={14}
-                      className="text-blue-500 fill-blue-50"
-                    />
-                  </div>
-                  <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">
-                    {t.role}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Final CTA Area */}
-        <div className="mt-20 flex flex-col items-center">
-          <div className="mb-8 flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full border border-slate-200">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">
-              Partnered with 500+ Brands
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-900/5 border border-slate-900/10 mb-4 sm:mb-6">
+            <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-500 fill-yellow-500" />
+            <span className="text-xs sm:text-sm font-semibold text-slate-700">
+              Testimonials
             </span>
           </div>
 
-          <button className="group relative bg-slate-950 text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-black transition-all active:scale-95 shadow-xl shadow-slate-200">
-            Book a call
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff1f01] to-[#00b3ff] opacity-0 group-hover:opacity-10 transition-opacity" />
-          </button>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-black tracking-tight text-slate-950 mb-3 sm:mb-4">
+            Trusted by Real Sellers
+          </h2>
 
-          <span className="mt-6 text-slate-400 font-bold text-xs uppercase tracking-[0.3em]">
-            Official TikTok Shop Partner
-          </span>
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl sm:max-w-2xl mx-auto">
+            Join hundreds of successful sellers who've transformed their TikTok
+            Shop business
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          {TESTIMONIALS.map((item) => (
+            <div key={item.id} className="group relative">
+              {/* Glow */}
+              <div className="absolute inset-0 bg-linear-to-br from-[#ff1f01]/20 via-purple-500/20 to-[#00b3ff]/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative h-full p-5 sm:p-6 lg:p-8 rounded-3xl bg-white border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-500">
+                {/* Quote */}
+                <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-linear-to-br from-slate-100 to-slate-50 flex items-center justify-center">
+                  <Quote className="text-slate-400 w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+
+                {/* Rating */}
+                <div className="flex gap-0.5 mb-4 sm:mb-6">
+                  {Array.from({ length: item.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="text-yellow-400 fill-yellow-400 w-4 h-4 sm:w-4.5 sm:h-4.5"
+                    />
+                  ))}
+                </div>
+
+                {/* Text */}
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
+                  "{item.text}"
+                </p>
+
+                {/* User */}
+                <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-slate-100">
+                  <div className="relative w-11 h-11 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-linear-to-br from-slate-200 to-slate-300 ring-2 ring-white shadow-md">
+                    <Image
+                      src={item.avatar}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm sm:text-base leading-none mb-1">
+                      {item.name}
+                    </p>
+                    <span className="text-xs sm:text-sm text-slate-500 font-medium">
+                      {item.role}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Trust Badge */}
+        <div className="mt-12 sm:mt-14 lg:mt-16 text-center">
+          <p className="text-xs sm:text-sm text-slate-500 font-medium">
+            Rated 4.9/5 from over 200+ verified reviews
+          </p>
         </div>
       </div>
     </section>
   );
-};
-
-export default Testimonials;
+}
