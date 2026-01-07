@@ -1,5 +1,5 @@
 import React from "react";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote , ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 const jakarta = Plus_Jakarta_Sans({
@@ -52,8 +52,8 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-900/5 border border-slate-900/10 mb-4 sm:mb-6">
-            <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-500 fill-yellow-500" />
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-1 rounded-full bg-slate-900/5 border border-slate-900/10 mb-4 sm:mb-6">
+            <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-500 fill-yellow-500" />
             <span className="text-xs sm:text-sm font-semibold text-slate-700">
               Testimonials
             </span>
@@ -138,9 +138,9 @@ export default function Testimonials() {
         </div>
 
         {/* Trust Badge */}
-        <div className="mt-12 sm:mt-14 lg:mt-16 text-center">
+        <div className={`mt-12 sm:mt-14 lg:mt-16 text-center ${jakarta.className}`}>
           <p className="text-xs sm:text-sm text-slate-500 font-medium">
-            Rated 4.9/5 from over 200+ verified reviews
+            Rated 4.9/5 from over <span className="text-green-600">200+ </span>verified reviews
           </p>
         </div>
       </div>
