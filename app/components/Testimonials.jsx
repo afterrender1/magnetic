@@ -15,7 +15,7 @@ const TESTIMONIALS = [
     id: 2,
     name: "Sarah Ali",
     role: "E-commerce Brand Owner",
-       avatar: "/images/avatars/sarah.png",
+    avatar: "/images/avatars/sarah.png",
 
     rating: 5,
     text: "Their content hooks and scaling system helped us break through the algorithm without risking our account.",
@@ -24,7 +24,7 @@ const TESTIMONIALS = [
     id: 3,
     name: "Usman Raza",
     role: "Dropshipping Entrepreneur",
-     avatar: "/images/avatars/robert.png",
+    avatar: "/images/avatars/robert.png",
 
     rating: 5,
     text: "Finally a TikTok Shop partner that understands performance, not just views. ROI stayed strong as spend increased.",
