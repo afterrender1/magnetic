@@ -17,7 +17,7 @@ const outfit = Outfit({
 const TESTIMONIALS = [
   {
     id: 1,
-    name: "Ahmed Khan",
+    name: "Michel Johnson",
     role: "TikTok Shop Seller",
     avatar: "/images/avatars/michel.png",
     rating: 5,
@@ -25,7 +25,7 @@ const TESTIMONIALS = [
   },
   {
     id: 2,
-    name: "Sarah Ali",
+    name: "Sarah",
     role: "E-commerce Brand Owner",
     avatar: "/images/avatars/sarah.png",
 
@@ -34,7 +34,7 @@ const TESTIMONIALS = [
   },
   {
     id: 3,
-    name: "Usman Raza",
+    name: "Robert Lee",
     role: "Dropshipping Entrepreneur",
     avatar: "/images/avatars/robert.png",
 
