@@ -37,7 +37,6 @@ export default function ContactForm() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-linear-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2
             className={`text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-black tracking-tight mb-3 sm:mb-4 ${outfit.className}`}
@@ -56,13 +55,11 @@ export default function ContactForm() {
           </p>
         </div>
 
-        {/* Form Card with Gradient Border */}
         <div
           className={`relative group p-[1.5px] rounded-2xl bg-linear-to-r from-[#ff1f01] to-[#00b3ff] shadow-lg`}
         >
           <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name */}
               <div className="relative">
                 <label className="block text-xs sm:text-sm font-semibold text-slate-600 mb-2">
                   Full Name
@@ -79,7 +76,6 @@ export default function ContactForm() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Phone */}
                 <div className="relative">
                   <label className="block text-xs sm:text-sm font-semibold text-slate-600 mb-2">
                     Phone Number
@@ -95,7 +91,6 @@ export default function ContactForm() {
                   />
                 </div>
 
-                {/* Shop Name */}
                 <div className="relative">
                   <label className="block text-xs sm:text-sm font-semibold text-slate-600 mb-2">
                     Shop Name
@@ -112,7 +107,6 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              {/* TikTok Shop Question */}
               <div className="relative bg-slate-50 p-4 rounded-xl border border-dashed border-slate-300">
                 <label
                   className={`block text-sm sm:text-base font-semibold text-slate-800 mb-3 ${jakarta.className}`}
@@ -149,7 +143,6 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              {/* Submit Button */}
               <div className="mt-2 flex justify-center">
                 <button
                   type="submit"
@@ -171,7 +164,6 @@ export default function ContactForm() {
               </div>
             </form>
 
-            {/* Support Info */}
             <div
               className={`mt-8 pt-8 border-t border-slate-100 text-center text-sm sm:text-base text-slate-500 font-medium flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 ${jakarta.className}`}
             >
