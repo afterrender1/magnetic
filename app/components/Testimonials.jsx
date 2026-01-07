@@ -1,5 +1,5 @@
 import React from "react";
-import { Star, Quote , ShieldCheck } from "lucide-react";
+import { Star, Quote, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 const jakarta = Plus_Jakarta_Sans({
@@ -71,9 +71,11 @@ export default function Testimonials() {
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl sm:max-w-2xl mx-auto ">
-            Join hundreds of successful sellers who've transformed their TikTok
-            Shop business
+          <p
+            className={`text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl sm:max-w-2xl mx-auto ${jakarta.className}`}
+          >
+            Join hundreds of sellers who've transformed their TikTok Shop
+            business
           </p>
         </div>
 
@@ -138,9 +140,12 @@ export default function Testimonials() {
         </div>
 
         {/* Trust Badge */}
-        <div className={`mt-12 sm:mt-14 lg:mt-16 text-center ${jakarta.className}`}>
+        <div
+          className={`mt-12 sm:mt-14 lg:mt-16 text-center ${jakarta.className}`}
+        >
           <p className="text-xs sm:text-sm text-slate-500 font-medium">
-            Rated 4.9/5 from over <span className="text-green-600">200+ </span>verified reviews
+            Rated 4.9/5 from over <span className="text-green-600">200+ </span>
+            verified reviews
           </p>
         </div>
       </div>
