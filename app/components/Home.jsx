@@ -4,6 +4,7 @@ import Testimonials from "./Testimonials";
 import OurYoutubeChannel from "./OurYoutubeChannel";
 import FAQ from "./FAQ";
 import ContactForm from "./ContactForm";
+import BookCallButton from "./BookACall";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <OurYoutubeChannel />
       <FAQ />
       <ContactForm />
+      <BookCallButton />
     </>
   );
 };
