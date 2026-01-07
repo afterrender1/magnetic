@@ -11,7 +11,7 @@ const inter = Inter({
 const Hero = () => {
   return (
     <section
-      className={`relative min-h-screen flex flex-col items-center justify-start ${inter.className} overflow-hidden`}
+      className={`relative min-h-180 sm:min-h-screen pb-4 h-auto flex flex-col items-center justify-start ${inter.className} overflow-hidden`}
     >
       {/* Background */}
       <div className="absolute inset-0 bg-linear-to-r from-[#00b3ff] to-[#ff1f01]" />

@@ -1,6 +1,18 @@
 import React from "react";
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
+import { Outfit, Plus_Jakarta_Sans  } from "next/font/google";
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-jakarta",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-outfit",
+});
 
 const TESTIMONIALS = [
   {
@@ -47,11 +59,11 @@ export default function Testimonials() {
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-black tracking-tight text-slate-950 mb-3 sm:mb-4">
+          <h2 className={`text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-black tracking-tight text-slate-950 mb-3 sm:mb-4 ${outfit.className}`}>
             Trusted by Real Sellers
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl sm:max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl sm:max-w-2xl mx-auto ">
             Join hundreds of successful sellers who've transformed their TikTok
             Shop business
           </p>
@@ -60,7 +72,7 @@ export default function Testimonials() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {TESTIMONIALS.map((item) => (
-            <div key={item.id} className="group relative">
+            <div key={item.id} className={`group relative ${jakarta.className} `}>
               {/* Glow */}
               <div className="absolute inset-0 bg-linear-to-br from-[#ff1f01]/20 via-purple-500/20 to-[#00b3ff]/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
