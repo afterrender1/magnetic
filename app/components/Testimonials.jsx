@@ -109,7 +109,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Text */}
-                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
+                  <p className="text-slate-700  text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
                     "{item.text}"
                   </p>
 

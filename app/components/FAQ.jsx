@@ -84,14 +84,14 @@ export default function FAQ() {
                   className="w-full flex justify-between items-center text-left"
                 >
                   <span
-                    className={`text-sm sm:text-base md:text-lg font-semibold text-slate-900 ${jakarta.className}`}
+                    className={`text-sm cursor-pointer sm:text-base md:text-lg font-semibold text-slate-900 ${jakarta.className}`}
                   >
                     {item.question}
                   </span>
                   {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-slate-500" />
+                    <Minus className="w-5 h-5 cursor-pointer text-slate-500" />
                   ) : (
-                    <Plus className="w-5 h-5 text-slate-500" />
+                    <Plus className="w-5 h-5 cursor-pointer text-slate-500" />
                   )}
                 </button>
 
