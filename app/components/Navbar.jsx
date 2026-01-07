@@ -23,7 +23,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Winshop", href: "/winshop" },
+    { name: "Winshop", href: "/win-shop" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -148,7 +148,7 @@ export default function Navbar() {
               {navLinks.map((item) => (
                 <Link
                   key={item.name}
-                  href={`${item.name}`}
+                  href={`${item.href}`}
                   onClick={() => setIsOpen(false)}
                   className="
               text-2xl
