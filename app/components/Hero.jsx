@@ -58,10 +58,53 @@ const Hero = () => {
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col items-center gap-3 pt-4">
-            <button className="group relative rounded-full bg-white px-8 sm:px-12 py-3 sm:py-4 text-[#F93E25] font-bold text-base sm:text-xl shadow-2xl hover:scale-105 transition-all duration-300 active:scale-95">
-              Book a Call
-            </button>
+          <div className="flex flex-col items-center gap-3 pt-0">
+            <div className="relative inline-flex items-center justify-center group w-full sm:w-auto">
+              {/* 1. Optimized Glow - Hardware Accelerated */}
+              <div
+                className="
+      absolute inset-0 
+      bg-linear-to-r from-[#ff1f01] to-[#00b3ff] 
+      rounded-xl blur-md opacity-60 
+      transition-opacity duration-500 
+      group-hover:opacity-100
+      will-change-transform
+    "
+              ></div>
+
+              {/* 2. The Button Body */}
+              <a
+                href="#"
+                role="button"
+                className="
+      relative inline-flex items-center justify-center 
+      w-full sm:w-auto
+      px-8 py-3.5 
+      text-base font-bold text-white 
+      bg-transparent border border-white/30 rounded-xl 
+      transition-all duration-200 
+      hover:bg-white/10 
+      active:scale-95
+    "
+              >
+                Book a call
+                {/* 3. Responsive Animated SVG */}
+                <svg
+                  viewBox="0 0 10 10"
+                  className="ml-2 w-2.5 h-2.5 stroke-white stroke-[2px] fill-none overflow-visible"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M0 5h7"
+                    className="transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+                  />
+                  <path
+                    d="M1 1l4 4-4 4"
+                    className="transition-all duration-300 group-hover:translate-x-1.5"
+                  />
+                </svg>
+              </a>
+            </div>
 
             <p className="text-white/70 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em]">
               Official TikTok Shop Partner

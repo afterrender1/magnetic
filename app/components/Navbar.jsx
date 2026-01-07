@@ -54,13 +54,51 @@ export default function Navbar() {
 
         {/* Desktop & Mobile Actions */}
         <div className="flex items-center gap-4">
-          <a
-            href="tel:+923001234567"
-            className="hidden sm:flex items-center gap-2 rounded-full bg-white text-black px-4 py-2 font-semibold text-sm"
-          >
-            <PhoneCall size={16} />
-            Call Now
-          </a>
+          <div className="relative hidden md:flex items-center justify-center group w-full sm:w-auto">
+            {/* 1. Glow */}
+            <div
+              className="
+      absolute inset-0
+      bg-linear-to-r from-[#ff1f01] to-[#00b3ff]
+      rounded-full
+      blur-md opacity-60
+      transition-opacity duration-500
+      group-hover:opacity-100
+      will-change-transform
+    "
+            ></div>
+
+            {/* 2. Button */}
+            <a
+              href="#"
+              role="button"
+              className="
+      relative inline-flex items-center justify-center gap-2
+
+      /* Height like navbar */
+      h-10 sm:h-11 md:h-12
+
+      /* Padding scales */
+      px-5 sm:px-6 md:px-8
+
+      /* Text scales */
+      text-sm sm:text-base md:text-lg
+      font-bold text-white
+
+      bg-transparent
+      border border-white/30
+      rounded-full
+
+      transition-all duration-200
+      hover:bg-white/10
+      active:scale-95
+    "
+            >
+              Book a call
+              {/* Icon scales with text */}
+              <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" />
+            </a>
+          </div>
 
           <button
             className="text-white md:hidden p-2 active:scale-90 transition-transform"
