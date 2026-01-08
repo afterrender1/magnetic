@@ -3,8 +3,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { PhoneCall, Menu, X } from "lucide-react";
+import { PhoneCall, Menu, X, ChevronRight, Zap } from "lucide-react";
 import Image from "next/image";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-jakarta",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-outfit",
+});
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -121,11 +133,11 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black z-999 md:hidden flex flex-col p-4 sm:p-6"
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-0 z-999 bg-black md:hidden flex flex-col p-4 sm:p-6"
           >
             {/* Header */}
-            <div className="flex items-center justify-between mb-8 sm:mb-12">
+            <div className="flex items-center justify-between mb-10 sm:mb-14">
               <Link href="/" className="relative z-10">
                 <Image
                   src="/logo/wbrandlogo.png"
@@ -135,65 +147,141 @@ export default function Navbar() {
                   className="opacity-90"
                 />
               </Link>
+
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 sm:p-3 text-white bg-white/10 rounded-full"
+                className="
+            p-2.5 sm:p-3
+            rounded-full
+            bg-white/10
+            border border-white/10
+            text-white
+            hover:bg-white/20
+            transition
+          "
               >
-                <X size={22} className="sm:hidden" />
-                <X size={28} className="hidden sm:block" />
+                <X size={26} />
               </button>
             </div>
 
-            {/* Links */}
-            <nav className="flex flex-col">
-              {navLinks.map((item) => (
+            {/* Navigation */}
+            <nav className={`flex flex-col ${outfit.className}`}>
+              {navLinks.map((item, i) => (
                 <Link
                   key={item.name}
-                  href={`${item.href}`}
+                  href={item.href}
                   onClick={() => setIsOpen(false)}
                   className="
-              text-2xl
-              xs:text-3xl
-              sm:text-4xl
-              font-bold
+              group flex items-center justify-between
+              text-2xl xs:text-3xl sm:text-4xl
+              font-extrabold
               text-white
-              border-b border-white/10
               py-4 sm:py-6
+              border-b border-white/10
+              transition-all
               active:bg-white/5
             "
                 >
-                  {item.name}
+                  <span className="tracking-tight">{item.name}</span>
+
+                  {/* Lucide Arrow */}
+                  <ChevronRight
+                    size={26}
+                    className="
+                opacity-0 translate-x-2
+                group-hover:opacity-100 group-hover:translate-x-0
+                transition-all
+              "
+                  />
                 </Link>
               ))}
             </nav>
+            {/* Booking Preview */}
+            <div className="mt-10 sm:mt-14">
+              <div className="relative group">
+                {/* Gradient Border */}
+                <div
+                  className="
+        absolute -inset-px
+        bg-linear-to-r from-[#00b3ff] to-[#ff1f01]
+        rounded-2xl
+        opacity-70
+        group-hover:opacity-100
+        transition
+      "
+                />
+
+                {/* Inner Card */}
+                <div
+                  className="
+        relative rounded-2xl
+        bg-white
+        border border-slate-200
+        overflow-hidden
+        shadow-xl
+      "
+                >
+                  {/* Title */}
+                  <div
+                    className={`px-4 pt-4 pb-3 border-b border-slate-200 ${outfit.className}`}
+                  >
+                    <p className="text-xs uppercase tracking-widest text-slate-500 font-bold">
+                      Book Instantly{" "}
+                      <span>
+                        <Zap className="inline-block w-3 h-3 ml-1 text-amber-300" />
+                      </span>
+                    </p>
+                    <h4 className="text-lg font-bold text-slate-900 mt-1">
+                      Schedule a Call
+                    </h4>
+                  </div>
+
+                  {/* Responsive Calendar */}
+                  <div className="relative w-full pb-[85%] bg-white">
+                    <iframe
+                      src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZLK4GY7Ro5CiWC15Eq3suxu2SgVs9KQTWdSnRR79YvFpLVxRlUY8ZgrVx-Fj5wlh8BsjuvHFH"
+                      title="Book a Call"
+                      className="absolute inset-0 w-full h-full border-0"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* CTA */}
-            <div className="mt-auto pt-6 w-full">
+            <div className="mt-auto pt-8">
               <a
                 target="_blank"
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZLK4GY7Ro5CiWC15Eq3suxu2SgVs9KQTWdSnRR79YvFpLVxRlUY8ZgrVx-Fj5wlh8BsjuvHFH"
                 className="
-      group relative flex items-center justify-center gap-3
-      rounded-2xl bg-white text-black
-      py-4 px-6
-      text-lg sm:text-xl font-extrabold
-      shadow-[0_0_20px_rgba(255,255,255,0.1)]
-      hover:bg-gray-100
-      active:scale-[0.97]
-      transition-all duration-200
-      w-full
-    "
+            relative group w-full
+            flex items-center justify-center gap-3
+            rounded-2xl
+            bg-linear-to-r from-[#00b3ff] to-[#ff1f01]
+            p-0.5
+            transition
+            active:scale-[0.97]
+          "
               >
-                {/* Optimized Icon handling: Using a single component with responsive size props */}
-                <PhoneCall
-                  className="shrink-0 transition-transform group-hover:rotate-12"
-                  size={24}
-                />
-
-                <span className="tracking-tight">Call Now</span>
-
-                {/* Subtle Shine Effect for high-end feel without lag */}
-                <div className="absolute inset-0 rounded-2xl border border-white/20 pointer-events-none" />
+                <div
+                  className="
+              flex items-center justify-center gap-3
+              w-full rounded-2xl
+              bg-black
+              py-4 px-6
+              text-lg sm:text-xl
+              font-extrabold text-white
+              group-hover:bg-black/90
+              transition
+            "
+                >
+                  <PhoneCall
+                    size={22}
+                    className="transition-transform group-hover:rotate-12"
+                  />
+                  <span>Book a Call</span>
+                </div>
               </a>
             </div>
           </motion.div>
