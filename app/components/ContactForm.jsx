@@ -165,13 +165,13 @@ export default function ContactForm() {
             </form>
 
             <div
-              className={`mt-8 pt-8 border-t border-slate-100 text-center text-sm sm:text-base text-slate-500 font-medium flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 ${jakarta.className}`}
+              className={`pt-3 mt-4 border-t border-slate-100 text-center text-sm sm:text-base text-slate-500 font-medium flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-8 ${jakarta.className}`}
             >
               <div className="flex items-center gap-2">
                 <PhoneCall className="w-4 h-4 text-blue-500" />
                 +1 (234) 567-8901
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center border-t border-slate-100 gap-2">
                 <Mail className="w-4 h-4 text-blue-500" />
                 contact@magnetik.com
               </div>
