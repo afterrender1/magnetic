@@ -171,7 +171,7 @@ export default function ContactForm() {
                 <PhoneCall className="w-4 h-4 text-blue-500" />
                 +1 (234) 567-8901
               </div>
-              <div className="flex items-center border-t border-slate-100 gap-2">
+              <div className="flex items-center lg:border-none border-t border-slate-100 gap-2">
                 <Mail className="w-4 h-4 text-blue-500" />
                 contact@magnetik.com
               </div>
