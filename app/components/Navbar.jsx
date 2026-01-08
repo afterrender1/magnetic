@@ -31,7 +31,7 @@ export default function Navbar() {
     <>
       <nav className="relative w-full rounded-full h-16 flex items-center justify-between px-6 md:px-12 py-3 bg-black/10 backdrop-blur-2xl border-b border-white/30 z-40">
         {/* Logo */}
-        <div className="relative z-10">
+        <Link href="/" className="relative z-10">
           <Image
             src="/logo/wbrandlogo.png"
             alt="Logo"
@@ -40,7 +40,7 @@ export default function Navbar() {
             priority
             className="opacity-85"
           />
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-8 text-white font-medium">
@@ -125,7 +125,7 @@ export default function Navbar() {
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-8 sm:mb-12">
-              <div>
+              <Link href="/" className="relative z-10">
                 <Image
                   src="/logo/wbrandlogo.png"
                   alt="Logo"
@@ -133,7 +133,7 @@ export default function Navbar() {
                   height={48}
                   className="opacity-90"
                 />
-              </div>
+              </Link>
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 sm:p-3 text-white bg-white/10 rounded-full"
