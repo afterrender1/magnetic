@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PhoneCall, Mail, Instagram, Youtube, Twitter } from "lucide-react";
+import { PhoneCall, Mail, Youtube } from "lucide-react";
 import Image from "next/image";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 
@@ -18,6 +18,11 @@ const outfit = Outfit({
 });
 
 export default function Footer() {
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Winshop", href: "/win-shop" },
+    { name: "Contact", href: "/contact" },
+  ];
   return (
     <footer
       className={`relative overflow-hidden mx-3 sm:mx-6 2xl:mx-auto 
@@ -60,16 +65,16 @@ export default function Footer() {
               Platform
             </h3>
             <ul className={`flex flex-col gap-3 ${jakarta.className}`}>
-              {["Home", "Win Shop", "Contact", "FAQ"].map((item) => (
-                <li key={item}>
+              {navLinks.map((item) => (
+                <li key={item.name}>
                   <a
-                    href={`/${item.toLowerCase().replace(" ", "")}`}
+                    href={item.href}
                     className="text-white/80 hover:text-white 
                     transition-all duration-200 font-medium text-sm 
                     flex items-center justify-start group"
                   >
                     <span className="hidden sm:block w-0 group-hover:w-2 h-px bg-white mr-0 group-hover:mr-2 transition-all"></span>
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -92,7 +97,7 @@ export default function Footer() {
                   <PhoneCall className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-white/90 group-hover:text-white text-sm font-medium">
-                  +92 300 1234567
+                  +1 (234) 567-8901
                 </span>
               </a>
 
@@ -111,28 +116,59 @@ export default function Footer() {
           </div>
 
           {/* Social */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start w-full">
             <h3
-              className={`text-xs font-bold text-white mb-4 uppercase tracking-[0.25em] ${outfit.className}`}
+              className={`text-xs sm:text-sm font-bold text-white mb-4 uppercase tracking-[0.25em] ${outfit.className}`}
             >
               Follow Us
             </h3>
-            <div className="flex gap-3">
-              {[
-                { Icon: Instagram, bg: "hover:bg-[#E1306C]" },
-                { Icon: Youtube, bg: "hover:bg-[#FF0000]" },
-                { Icon: Twitter, bg: "hover:bg-[#1DA1F2]" },
-              ].map(({ Icon, bg }, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className={`p-3 bg-white/10 border border-white/10 
-                  rounded-xl transition-all duration-300 
-                  hover:-translate-y-1 hover:shadow-xl ${bg}`}
-                >
-                  <Icon className="w-5 h-5 text-white" />
-                </a>
-              ))}
+
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              {[{ Icon: Youtube, bg: "hover:bg-[#FF0000]" }].map(
+                ({ Icon, bg }, i) => (
+                  <a
+                    key={i}
+                    href="https://www.youtube.com/@MagnetikTSP"
+                    target="_blank"
+                    aria-label="YouTube"
+                    className={`
+            flex items-center justify-center
+            w-11 h-11 sm:w-12 sm:h-12
+            bg-white/10 border border-white/10
+            rounded-xl
+            transition-all duration-300
+            hover:-translate-y-1 hover:shadow-xl
+            ${bg}
+          `}
+                  >
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </a>
+                )
+              )}
+
+              {/* TikTok Icon */}
+              <a
+                href="https://www.tiktok.com/@magnetikmedia"
+                target="_blank"
+                aria-label="TikTok"
+                className="
+        flex items-center justify-center
+        w-11 h-11 sm:w-12 sm:h-12
+        bg-white/10 border border-white/10
+        rounded-xl
+        transition-all duration-300
+        hover:-translate-y-1 hover:shadow-xl
+        hover:bg-black
+      "
+              >
+                <Image
+                  src="/logo/tiktok.svg"
+                  alt="TikTok"
+                  width={22}
+                  height={22}
+                  className="invert"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -141,7 +177,9 @@ export default function Footer() {
         <div className="h-px w-full bg-linear-to-r from-transparent via-white/25 to-transparent mt-14 mb-8" />
 
         {/* Bottom */}
-        <div className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-white/70 ${jakarta.className}`}>
+        <div
+          className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-white/70 ${jakarta.className}`}
+        >
           <p className="text-left">
             © {new Date().getFullYear()} Afterrender. All rights reserved.
           </p>
