@@ -74,7 +74,8 @@ const Hero = () => {
 
               {/* 2. The Button Body */}
               <a
-                href="#"
+                target="_blank"
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZLK4GY7Ro5CiWC15Eq3suxu2SgVs9KQTWdSnRR79YvFpLVxRlUY8ZgrVx-Fj5wlh8BsjuvHFH"
                 role="button"
                 className="
       relative inline-flex items-center justify-center 
