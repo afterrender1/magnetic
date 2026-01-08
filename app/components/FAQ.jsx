@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Plus, Minus, ShieldCheck } from "lucide-react";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { motion, AnimatePresence } from "framer-motion";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -39,7 +40,7 @@ const FAQS = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(null > null);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -49,7 +50,13 @@ export default function FAQ() {
     <section className="py-16 sm:py-20 lg:py-24 bg-linear-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 sm:mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-100/50 border border-slate-200/30 mb-4 sm:mb-6">
             <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
             <span className="text-xs sm:text-sm font-semibold text-slate-700">
@@ -69,50 +76,65 @@ export default function FAQ() {
             Answers to common questions about TikTok Shop Marketing and
             Magnetik's proven strategies.
           </p>
-        </div>
+        </motion.div>
 
         {/* FAQ Items */}
         <div className="space-y-6">
           {FAQS.map((item, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className={`relative group rounded-xl p-[1.5px] bg-linear-to-r from-[#ff1f01] to-[#00b3ff] shadow-lg`}
             >
               <div className="relative bg-white rounded-xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl transition-all duration-300">
                 <button
                   onClick={() => toggle(index)}
-                  className="w-full flex justify-between items-center text-left"
+                  className="w-full flex justify-between items-center text-left outline-none"
                 >
                   <span
                     className={`text-sm cursor-pointer sm:text-base md:text-lg font-semibold text-slate-900 ${jakarta.className}`}
                   >
                     {item.question}
                   </span>
-                  {openIndex === index ? (
-                    <Minus className="w-5 h-5 cursor-pointer text-slate-500" />
-                  ) : (
-                    <Plus className="w-5 h-5 cursor-pointer text-slate-500" />
-                  )}
+                  <motion.div
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    {openIndex === index ? (
+                      <Minus className="w-5 h-5 cursor-pointer text-slate-500" />
+                    ) : (
+                      <Plus className="w-5 h-5 cursor-pointer text-slate-500" />
+                    )}
+                  </motion.div>
                 </button>
 
-                <div
-                  className={`mt-3 text-xs sm:text-sm text-slate-600 transition-all duration-300 overflow-hidden ${
-                    openIndex === index
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  {item.answer.split("\n").map((line, i) => (
-                    <p
-                      key={i}
-                      className={`mb-2 last:mb-0 ${jakarta.className}`}
+                <AnimatePresence initial={false}>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
                     >
-                      {line}
-                    </p>
-                  ))}
-                </div>
+                      <div className="mt-3 pt-2 text-xs sm:text-sm text-slate-600 border-t border-slate-100">
+                        {item.answer.split("\n").map((line, i) => (
+                          <p
+                            key={i}
+                            className={`mb-2 last:mb-0 ${jakarta.className}`}
+                          >
+                            {line}
+                          </p>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
