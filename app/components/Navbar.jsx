@@ -74,8 +74,9 @@ export default function Navbar() {
 
             {/* 2. Button */}
             <a
-              href="#"
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZLK4GY7Ro5CiWC15Eq3suxu2SgVs9KQTWdSnRR79YvFpLVxRlUY8ZgrVx-Fj5wlh8BsjuvHFH"
               role="button"
+              target="_blank"
               className="
       relative inline-flex items-center justify-center gap-2
 
@@ -169,7 +170,8 @@ export default function Navbar() {
             {/* CTA */}
             <div className="mt-auto pt-6 w-full">
               <a
-                href="tel:+923001234567"
+                target="_blank"
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZLK4GY7Ro5CiWC15Eq3suxu2SgVs9KQTWdSnRR79YvFpLVxRlUY8ZgrVx-Fj5wlh8BsjuvHFH"
                 className="
       group relative flex items-center justify-center gap-3
       rounded-2xl bg-white text-black
