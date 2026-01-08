@@ -134,10 +134,14 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 z-999 bg-black md:hidden flex flex-col p-4 sm:p-6"
+            className="
+        fixed inset-0 z-999 bg-black md:hidden
+        flex flex-col p-4 sm:p-6
+        max-h-screen overflow-y-auto
+      "
           >
             {/* Header */}
-            <div className="flex items-center justify-between mb-10 sm:mb-14">
+            <div className="flex items-center justify-between mb-10 sm:mb-14 shrink-0">
               <Link href="/" className="relative z-10">
                 <Image
                   src="/logo/wbrandlogo.png"
@@ -165,7 +169,7 @@ export default function Navbar() {
             </div>
 
             {/* Navigation */}
-            <nav className={`flex flex-col ${outfit.className}`}>
+            <nav className={`flex flex-col ${outfit.className} shrink-0`}>
               {navLinks.map((item, i) => (
                 <Link
                   key={item.name}
@@ -184,7 +188,6 @@ export default function Navbar() {
                 >
                   <span className="tracking-tight">{item.name}</span>
 
-                  {/* Lucide Arrow */}
                   <ChevronRight
                     size={26}
                     className="
@@ -196,37 +199,38 @@ export default function Navbar() {
                 </Link>
               ))}
             </nav>
+
             {/* Booking Preview */}
-            <div className="mt-10 sm:mt-14">
+            <div className="mt-10 sm:mt-14 shrink-0">
               <div className="relative group">
                 {/* Gradient Border */}
                 <div
                   className="
-        absolute -inset-px
-        bg-linear-to-r from-[#00b3ff] to-[#ff1f01]
-        rounded-2xl
-        opacity-70
-        group-hover:opacity-100
-        transition
-      "
+            absolute -inset-px
+            bg-linear-to-r from-[#00b3ff] to-[#ff1f01]
+            rounded-2xl
+            opacity-70
+            group-hover:opacity-100
+            transition
+          "
                 />
 
                 {/* Inner Card */}
                 <div
                   className="
-        relative rounded-2xl
-        bg-white
-        border border-slate-200
-        overflow-hidden
-        shadow-xl
-      "
+            relative rounded-2xl
+            bg-white
+            border border-slate-200
+            overflow-hidden
+            shadow-xl
+          "
                 >
                   {/* Title */}
                   <div
                     className={`px-4 pt-4 pb-3 border-b border-slate-200 ${outfit.className}`}
                   >
                     <p className="text-xs uppercase tracking-widest text-slate-500 font-bold">
-                      Book Instantly{" "}
+                      Book Instantly
                       <span>
                         <Zap className="inline-block w-3 h-3 ml-1 text-amber-300" />
                       </span>
@@ -250,7 +254,7 @@ export default function Navbar() {
             </div>
 
             {/* CTA */}
-            <div className="mt-auto pt-8">
+            <div className="mt-auto pt-8 shrink-0">
               <a
                 target="_blank"
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZLK4GY7Ro5CiWC15Eq3suxu2SgVs9KQTWdSnRR79YvFpLVxRlUY8ZgrVx-Fj5wlh8BsjuvHFH"
@@ -266,15 +270,15 @@ export default function Navbar() {
               >
                 <div
                   className="
-              flex items-center justify-center gap-3
-              w-full rounded-2xl
-              bg-black
-              py-4 px-6
-              text-lg sm:text-xl
-              font-extrabold text-white
-              group-hover:bg-black/90
-              transition
-            "
+            flex items-center justify-center gap-3
+            w-full rounded-2xl
+            bg-black
+            py-4 px-6
+            text-lg sm:text-xl
+            font-extrabold text-white
+            group-hover:bg-black/90
+            transition
+          "
                 >
                   <PhoneCall
                     size={22}
