@@ -2,6 +2,10 @@ import ContactForm from "@/app/components/ContactForm";
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 import React from "react";
+export const metadata = {
+  title: "Magnetik TSP - Contact Us",
+  description: "Contact Magnetik TSP for your TikTok Shop needs in 2026",
+};
 
 const Page = () => {
   return (

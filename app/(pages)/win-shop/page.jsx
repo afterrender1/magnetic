@@ -15,6 +15,10 @@ const outfit = Outfit({
   weight: ["600"],
   variable: "--font-outfit",
 });
+export const metadata = {
+  title: "Magnetik TSP - Win Shop on TikTok in 2026",
+  description: "Win Shop on Tiktok in 2026 with Magnetik",
+};
 
 const Page = () => {
   return (
